@@ -24,6 +24,8 @@ The main part of the program can be found in SudokuSolver.cs:
         {
             var ga = new GeneticAlgorithm();
             var population = new Population();
+            
+            // create an initial population
             for (var i = 0; i < POPULATION_SIZE; ++i)
             {
                 var chromosome = new Chromosome();
