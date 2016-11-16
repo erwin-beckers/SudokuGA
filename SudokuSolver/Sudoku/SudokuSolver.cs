@@ -7,10 +7,16 @@ namespace SudokuSolver
     {
         private const int POPULATION_SIZE = 3000;
 
+        /// <summary>
+        /// Solves the specified sudoku.
+        /// </summary>
+        /// <param name="sudoku">The sudoku.</param>
         public void Solve(Sudoku sudoku)
         {
             var ga = new GeneticAlgorithm();
             var population = new Population();
+
+            // create an initial population
             for (var i = 0; i < POPULATION_SIZE; ++i)
             {
                 var chromosome = new Chromosome();
