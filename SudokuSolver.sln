@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAF", "GAF\GAF.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuSolver", "SudokuSolver\SudokuSolver.csproj", "{2D6110D3-0560-41AD-AF2C-016403E1B5B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAF.Tests", "GAF.Tests\GAF.Tests.csproj", "{0FBE9E26-C83B-4F29-BF3F-1632D63A0FCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2D6110D3-0560-41AD-AF2C-016403E1B5B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D6110D3-0560-41AD-AF2C-016403E1B5B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D6110D3-0560-41AD-AF2C-016403E1B5B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FBE9E26-C83B-4F29-BF3F-1632D63A0FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FBE9E26-C83B-4F29-BF3F-1632D63A0FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FBE9E26-C83B-4F29-BF3F-1632D63A0FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FBE9E26-C83B-4F29-BF3F-1632D63A0FCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

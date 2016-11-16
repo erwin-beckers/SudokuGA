@@ -27,10 +27,10 @@ namespace SudokuSolver
             }
 
             var fitnessCalculator = new SudokuFitnessCalculator(sudoku);
-            ga.Add(new Elite(0.05));
+            ga.Add(new Elite(0.01));
             ga.Add(new Mutate(0.8));
             ga.Add(new SudokuDiversify(0.2));
-            ga.Add(new SudokuCrossOver(0.85));
+            ga.Add(new SudokuCrossOver(0.8));
             ga.Run(population, new TournamentSelection(), fitnessCalculator, this);
         }
 

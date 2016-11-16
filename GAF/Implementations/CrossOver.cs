@@ -33,7 +33,7 @@ namespace GAF
         {
             // check if we need to do a crossover
             var val = _rnd.NextDouble();
-            if (val > _crossOverProbabilty)
+            if (val <= _crossOverProbabilty)
             {
                 // no, then simply return the parents
                 child1 = parent1;
