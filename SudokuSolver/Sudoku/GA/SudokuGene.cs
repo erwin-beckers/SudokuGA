@@ -56,7 +56,7 @@ namespace SudokuSolver
 
         /// <summary>
         /// Performs a single mutation on this gene
-        /// We simply put a random value (1-9) in one of the columns
+        /// We simply put a random value (1-9) in 3  columns
         /// </summary>
         public void Mutate()
         {

@@ -46,6 +46,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sudoku\GA\SudokuCrossover.cs" />
+    <Compile Include="Sudoku\GA\SudokuDiversify.cs" />
     <Compile Include="Sudoku\GA\SudokuGene.cs" />
     <Compile Include="Sudoku\SudokuSolver.cs" />
     <Compile Include="Sudoku\Sudoku.cs" />

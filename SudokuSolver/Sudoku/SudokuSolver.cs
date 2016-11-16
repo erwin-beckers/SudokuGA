@@ -3,10 +3,9 @@ using System;
 
 namespace SudokuSolver
 {
-    public class SudokuSolver
+    public class SudokuSolver : IGenerationCallback
     {
         private const int POPULATION_SIZE = 3000;
-
         /// <summary>
         /// Solves the specified sudoku.
         /// </summary>
@@ -28,10 +27,24 @@ namespace SudokuSolver
             }
 
             var fitnessCalculator = new SudokuFitnessCalculator(sudoku);
-            ga.Add(new Elite(0.1));
+            ga.Add(new Elite(0.05));
             ga.Add(new Mutate(0.8));
-            ga.Add(new SudokuCrossOver(0.5));
-            ga.Run(population, new TournamentSelection(), fitnessCalculator);
+            ga.Add(new SudokuDiversify(0.2));
+            ga.Add(new SudokuCrossOver(0.85));
+            ga.Run(population, new TournamentSelection(), fitnessCalculator, this);
         }
+
+        public void OnStart(int generation)
+        {
+        }
+
+        public void OnEnd(int generation, double bestFitness)
+        {
+            if ((generation % 50) == 0)
+            {
+                Console.WriteLine($"gen:{generation} best fitness:{bestFitness}");
+            }
+        }
+
     }
 }

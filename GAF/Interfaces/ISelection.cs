@@ -12,7 +12,8 @@
         /// <param name="elite">The elite operator</param>
         /// <param name="mutate">The mutate operator</param>
         /// <param name="crossover">The crossover operator</param>
+        /// <param name="diversify">The diversify operator</param>
         /// <returns>New population</returns>
-        Population CreateNewPopulation(Population currentPopulation, IElite elite, IMutate mutate, ICrossOver crossover);
+        Population CreateNewPopulation(Population currentPopulation, IElite elite, IMutate mutate, ICrossOver crossover, IDiversify diversify);
     }
 }

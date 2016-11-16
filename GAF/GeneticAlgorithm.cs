@@ -21,26 +21,43 @@
         private ICrossOver _crossover;
 
         /// <summary>
+        /// The diversify operator to use
+        /// </summary>
+        private IDiversify _diversify;
+
+        /// <summary>
         /// Runs the genetic algorithm until we found a solution
         /// </summary>
         /// <param name="population">The initial population.</param>
         /// <param name="selection">The selection operator .</param>
         /// <param name="fitnessCalculator">The fitness calculator</param>
-        public void Run(Population population, ISelection selection, IFitness fitnessCalculator)
+        public void Run(Population population, ISelection selection, IFitness fitnessCalculator, IGenerationCallback callback)
         {
             int generation = 0;
             while (!population.Finished)
             {
+                callback.OnStart(generation);
                 // calculate fitness of all chromosones in the population
                 population.Calculate(fitnessCalculator, generation);
 
-                // create a new popuplation based on the current population
-                population = selection.CreateNewPopulation(population, _elite, _mutate, _crossover);
+                double bestFitness = population[0].Fitness;
 
+                // create a new popuplation based on the current population
+                population = selection.CreateNewPopulation(population, _elite, _mutate, _crossover, _diversify);
+
+                callback.OnEnd(generation, bestFitness);
                 generation++;
             }
         }
 
+        /// <summary>
+        /// Adds the specified diversify operator
+        /// </summary>
+        /// <param name="diversify">The diversify operator</param>
+        public void Add(IDiversify diversify)
+        {
+            _diversify = diversify;
+        }
         /// <summary>
         /// Adds the specified elite operator
         /// </summary>

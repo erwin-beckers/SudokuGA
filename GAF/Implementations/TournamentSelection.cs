@@ -27,8 +27,9 @@ namespace GAF
         /// <param name="elite">The elite operator.</param>
         /// <param name="mutate">The mutate operator.</param>
         /// <param name="crossover">The crossover operator.</param>
+        /// <param name="diversify">The diversify operator.</param>
         /// <returns></returns>
-        public Population CreateNewPopulation(Population population, IElite elite, IMutate mutate, ICrossOver crossover)
+        public Population CreateNewPopulation(Population population, IElite elite, IMutate mutate, ICrossOver crossover, IDiversify diversify)
         {
             IChromosome parent1, parent2;
             IChromosome child1 = null, child2 = null;
@@ -38,6 +39,9 @@ namespace GAF
 
             // copy all elites to the new population
             elite?.Process(population, nextPopulation);
+
+            // make sure the population is diversified enough
+            diversify?.Process(nextPopulation, population.Count);
 
             // while next population is not filled completely
             while (nextPopulation.Count < population.Count)

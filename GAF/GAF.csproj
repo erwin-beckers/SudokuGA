@@ -44,6 +44,7 @@
     <Compile Include="GeneticAlgorithm.cs" />
     <Compile Include="Implementations\Chromosome.cs" />
     <Compile Include="Implementations\CrossOver.cs" />
+    <Compile Include="Implementations\Diversify.cs" />
     <Compile Include="Implementations\Elite.cs" />
     <Compile Include="Implementations\Gene.cs" />
     <Compile Include="Implementations\Mutate.cs" />
@@ -51,9 +52,11 @@
     <Compile Include="Interfaces\IBaseOperator.cs" />
     <Compile Include="Interfaces\IChromosome.cs" />
     <Compile Include="Interfaces\ICrossOver.cs" />
+    <Compile Include="Interfaces\IDiversify.cs" />
     <Compile Include="Interfaces\IElite.cs" />
     <Compile Include="Interfaces\IFitness.cs" />
     <Compile Include="Interfaces\IGene.cs" />
+    <Compile Include="Interfaces\IGenerationCallback.cs" />
     <Compile Include="Interfaces\IMutate.cs" />
     <Compile Include="Interfaces\ISelection.cs" />
     <Compile Include="Population.cs" />
