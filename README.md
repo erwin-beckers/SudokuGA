@@ -20,11 +20,15 @@ Simply download the sources, open the solution in visual studio and run it
 
 The main part of the program can be found in SudokuSolver.cs:
 ```
+        /// <summary>
+        /// Solves the specified sudoku.
+        /// </summary>
+        /// <param name="sudoku">The sudoku.</param>
         public void Solve(Sudoku sudoku)
         {
             var ga = new GeneticAlgorithm();
             var population = new Population();
-            
+
             // create an initial population
             for (var i = 0; i < POPULATION_SIZE; ++i)
             {
